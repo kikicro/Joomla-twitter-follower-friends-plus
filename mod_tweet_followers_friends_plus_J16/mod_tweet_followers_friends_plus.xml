@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.6.0"
+	client="site"
+	method="upgrade">
+	<name>Twitter Followers Friends Module</name>
+	<author>Theo van der Sluijs</author>
+	<creationDate>July 2011</creationDate>
+	<copyright>(C) 2011 Theo van der Sluijs / IamboredsoIblog.eu</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@IamboredsoIblog.eu</authorEmail>
+	<authorUrl>www.IamboredsoIblog.eu</authorUrl>
+	<version>3.4</version>
+	<description>Show images of your twitter followers or friends</description>
+	<files>
+		<filename module="mod_tweet_followers_friends_plus">mod_tweet_followers_friends_plus.php</filename>
+		<filename>mod_tweet_followers_friends_plus.xml</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/tweet_followers.css</filename>
+		<filename>tmpl/index.html</filename>
+		<filename>twitteroauth/OAuth.php</filename>
+		<filename>twitteroauth/twitteroauth.php</filename>	
+	</files>
+
+
+	
+	<languages>
+        <!-- Any language files included with the module -->
+        <language tag="en-GB">en-GB.mod_tweet_followers_friends_plus.ini</language>
+    </languages>		
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+		<field name="CONSUMER_KEY" type="text" default="" label="Your Consumer key" description="Put in your consumer key id you are using on twitter." />
+		<field name="CONSUMER_SECRET" type="text" default="" label="Your Consumer secret" description="Put in your consumer secret id you are using on twitter." />
+		<field name="REQUEST_TOKEN" type="text" default="" label="Your Request token" description="Put in your request token id you are using on twitter." />
+		<field name="REQUEST_TOKEN_SECRET" type="text" default="" label="Your request token secret" description="Put in your request token secret id you are using on twitter." />
+		<field name="showwhat" type="list" default="0" label="Friends or Followers" description="Show friends or Followers list">
+				<option value="0">Show Friends</option> 
+				<option value="1">Show Followers</option> 
+		</field>
+		<field name="TwitCount" type="text" default="12" label="Maximum Count" description="Maximum number your twitter friends/followers shown" />
+		<field name="TwitSize" type="list" default="48" label="Image Size" description="Pick a image size that is right for you">
+ 		    <option value="48">48x48 pixels</option> 
+		    <option value="24">24x24 pixels</option> 
+		</field>
+		<field name="TwitCache" type="list" default="30" label="Caching" description="Pick a Caching time. If you have many visitors you really should use cache !">
+ 		    <option value="0">None</option> 
+		    <option value="30">30 minutes</option> 
+			<option value="60">60 minutes</option> 
+		</field>
+		<field name="OpenLink" type="list" default="1" label="Open link in" description="It set's the opening of a link into the same browserpage or a (new) blank browserpage">
+ 		    <option value="1">Blank Page</option> 
+		    <option value="0">Same Page</option> 
+		</field>
+		<field name="RanLast" type="list" default="0" label="Display Order" description="Set's the display order or your friends/followers, random or last added">
+ 		    <option value="0">Random</option> 
+		    <option value="1">Last new</option> 
+		</field>				
+		<field name="Blink" type="list" default="0" label="Show Backlink" description="Show a backlink to IamBoredsoIblog.eu">
+ 		    <option value="0">Yes</option> 
+		    <option value="1">No</option> 
+		</field>	
+			</fieldset>
+		</fields>
+	</config>
+</extension>
